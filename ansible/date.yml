@@ -1,0 +1,6 @@
+---
+  - hosts: am-qa-internal
+    remote_user: root
+    tasks:
+    - name: Check current Date and Time
+      shell: /usr/bin/date
