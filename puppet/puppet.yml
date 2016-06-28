@@ -1,5 +1,5 @@
 ---
-  - hosts: http://ams-dev1-jboss-01.devlab.redhat.com/
+  - hosts: ams-dev1-jboss-01.devlab.redhat.com
     remote_user: root
     tasks:
     - name: Run Puppet
