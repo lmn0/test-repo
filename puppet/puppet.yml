@@ -3,7 +3,10 @@
     remote_user: root
     tasks:
     - name: Run Puppet
-      command: puppet agent --enable
+      command: "{{item}}"
+      with_items:
+       - puppet agent --enable
+       - puppet agent -t
       register: puppet_result
       changed_when: puppet_result.rc == 2
       failed_when: puppet_result.rc == 1
