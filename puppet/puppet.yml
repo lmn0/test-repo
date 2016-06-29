@@ -3,5 +3,8 @@
     remote_user: root
     tasks:
     - name: Run Puppet
-      shell: puppet agent -t
+      command: puppet agent -t
+      register: puppet_result
+      changed_when: puppet_result.rc == 2
+      failed_when: puppet_result.rc == 1
 
